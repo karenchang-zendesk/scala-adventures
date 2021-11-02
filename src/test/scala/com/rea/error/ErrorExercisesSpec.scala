@@ -138,15 +138,15 @@ class ErrorExercisesSpec extends Specification {
 
     "Exercise 10" should {
       "return a suggestion string " in {
-        suggestAProperty2(12, 1) must beRight(s"Hey ${agent1.name} how about selling A great house")
+        suggestAProperty(12, 1) must beRight(s"Hey ${agent1.name} how about selling A great house")
       }
 
       "return an error if agent not found " in {
-        suggestAProperty2(12, 0) must beLeft(AppError("agent 0 not found"))
+        suggestAProperty(12, 0) must beLeft(AppError("agent 0 not found"))
       }
 
       "return an error if property not found " in {
-        suggestAProperty2(0, 1) must beLeft(AppError("property 0 not found"))
+        suggestAProperty(0, 1) must beLeft(AppError("property 0 not found"))
       }
     }
 
